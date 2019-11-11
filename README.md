@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simplex Maximizacao
 
-## Available Scripts
+## Montar a tabela
 
-In the project directory, you can run:
+1. pedir numero de equacoes;
+2. montar a tabela de acordo com classroom;
+3. negar a linha do z;
 
-### `yarn start`
+## Gaus
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Escolher a coluna de menor valor negativo da linha do z;
+2. Pegar o valor da coluna selecionada e dividir pelo limite da sua linha;
+3. Selecionar a linha do menor valor positivo dos resultados e assim, verificar o cruzamento com a coluna e selecionar o pivo;
+4. Verificar se o pivo escolhido vale 1;
+  4.1. Se sim: continuar gaus;
+  4.1. Se não: Dividir a linha inteira pelo valor do pivo escolhido;
+5. Subtrair todas as outras linhas pela linha do pivo até zerar a coluna do pivo(menos ele).
+  5.1. Aplicar fórmula em todas as linhas que não são a do pivo: LinhaX = LinhaX - (valor que precisar ser zerado) * Linha do Pivo
+6. Trocar nome da linha do pivo por nome da coluna do pivo;
+7. Verificar se a linha do z possuiu valores negativos;
+  7.1 Se sim: Repetir todo o Gaus;
+  7.1 Se não: Terminar algorítimo e mostrar resultados;
+    7.1.1 Os resultados serão: símbolo(letra) coluna base = valor da coluna do limite;
+    7.1.2 Se caso algum valor(x ou y) não estiver na coluna base, este valor é setado como 0;
+    7.1.3 Lembrando que símbolos(letras) que representam as variáveis de excesso não são resultados finais;
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+# Simplex Minimização
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Montar a tabela
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. pedir numero de equacoes;
+2. montar a tabela de acordo com classroom;
+3. negar todos os valores das equacões, exceto as variáveis de excesso que ficarão positivas e deixar positivo a linha do Z;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Gaus
 
-### `yarn eject`
+1. Escolher o menor valor da coluna do Limite;
+2. A linha do limite selecionado deve ser toda dividida pela linha do Z.
+  2.1 Selecionar o menor valor dessa divisão e selecionar a coluna correspondente.
+3. Após selecionar linha e coluna, verificar o cruzamento e selecionar o pivo;
+4. Verificar se o pivo escolhido vale 1;
+  4.1. Se sim: continuar gaus;
+  4.2. Se não: Dividir a linha inteira pelo valor do pivo escolhido;
+5. Zerar todos os valores da coluna menos o pivo;
+  5.1. (Repetir em todas as linhas menos a do pivo) Aplicar formula: LinhaX = LinhaX - (valor que precisar ser zerado) * LinhaPIVO;
+6. Trocar nome da linha do pivo por nome da coluna do pivo;
+7. Verificar se a coluna do Limite possui todos os valores positivos(exceto linha do Z);
+  7.1 Se sim: Mostrar tabela certa e valor das variaveis normais e z;
+  7.2 O valor das variáveis agora estarão na coluna do Limite, logo os valores positivos.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+EXEMPLO QUE ESTÁ NA MINHA PROVA, ACERTEI A QUESTÃO TODA, ENTÃO ABAIXO ESTÁ O RESULTADO PARA TESTAR:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+MinZ = 4x+5y
+       4x+7y >= 28
+       6x+3y >= 18
+Resultado com apenas 2 casas decimais:
+x = 1,39
+y = 3,21
+z = 18,41
+--fazendo no codigo provavelmente vai trazer a resposta com mais casas decimas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
