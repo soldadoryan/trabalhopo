@@ -1,15 +1,16 @@
 import React from 'react';
-import Equacoes from './util/EquacoesLu1';
+import { Router } from 'react-router-dom';
 
-import AppStyle from './AppStyle';
+import history from './services/history';
 
-import Tabela from './components/Tabela';
+import Routes from './routes';
 
 function App() {
   return (
     <>
-      <AppStyle />
-      <Tabela Equacoes={Equacoes} />
+      <Router history={history}>
+        <Routes />
+      </Router>
     </>
   );
 }
