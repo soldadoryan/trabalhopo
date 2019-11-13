@@ -1,5 +1,5 @@
 import React from 'react';
-import Equacoes from '../../util/MinMatheus';
+import Equacoes from '../../util/Equacoes';
 
 import AppStyle from '../../AppStyle';
 

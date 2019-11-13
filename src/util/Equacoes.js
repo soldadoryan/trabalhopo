@@ -4,7 +4,7 @@ export default {
       type: 'normal',
       variaveis: [
         {
-          numero: 2,
+          numero: 1,
           nome: 'x',
           sinal: '+',
           type: 'normal',
@@ -16,8 +16,8 @@ export default {
           type: 'normal',
         },
       ],
-      sinal: '>=',
-      limite: 16,
+      sinal: '<=',
+      limite: 5,
     },
     {
       type: 'normal',
@@ -35,8 +35,8 @@ export default {
           type: 'normal',
         },
       ],
-      sinal: '>=',
-      limite: 11,
+      sinal: '<=',
+      limite: 8,
     },
     {
       type: 'normal',
@@ -48,26 +48,26 @@ export default {
           type: 'normal',
         },
         {
-          numero: 3,
+          numero: 0,
           nome: 'y',
           sinal: '+',
           type: 'normal',
         },
       ],
-      sinal: '>=',
-      limite: 15,
+      sinal: '<=',
+      limite: 4,
     },
     {
       type: 'z',
       variaveis: [
         {
-          numero: 30,
+          numero: 2,
           nome: 'x',
           sinal: '+',
           type: 'normal',
         },
         {
-          numero: 50,
+          numero: 1,
           nome: 'y',
           sinal: '+',
           type: 'normal',

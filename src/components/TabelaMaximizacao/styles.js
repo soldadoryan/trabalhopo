@@ -8,11 +8,11 @@ export const Table = styled.table`
 `;
 
 export const Button = styled.button`
-  background-color: violet;
+  background-color: #222;
   border:0;
   color: white;
-  padding: 20px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
 `;
@@ -28,4 +28,11 @@ export const Lista = styled.ul`
     &.hide-li {
       display: none;
     }
+`;
+
+export const WrapListas = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 `;

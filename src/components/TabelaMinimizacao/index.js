@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Table, Button, Lista } from '../TabelaMaximizacao/styles';
+import { Table, Button, Lista, WrapListas } from '../TabelaMaximizacao/styles';
 import { preencherTabelaMinimizacao } from '../../util/Tabela';
 import { Minimizacao } from '../../util/Gaus';
 
@@ -21,7 +21,8 @@ export default function TabelaMinimizacao({ Equacoes }) {
 
   return (
     <>
-      <Button id="cta" onClick={e => iniciarMinimizacao()}>Iniciar Minimizacao</Button>
+      <h1>Simplex de minimização</h1>
+      <Button id="cta" onClick={e => iniciarMinimizacao()}>Executar</Button>
       <Table id="tabela" className="table table-striped">
         <tbody>
           <tr>
@@ -62,17 +63,22 @@ export default function TabelaMinimizacao({ Equacoes }) {
         </tbody>
       </Table >
 
-      <Lista id="lista">
-        {
-          listaVariaveis.map(linha => (
-            <li> {linha.nome}: <span></span></li>
-          ))
-        }
-      </Lista>
+      <WrapListas>
+        <Lista id="lista">
+          {
+            listaVariaveis.map(linha => (
+              <li> {linha.nome}: <span></span></li>
+            ))
+          }
+        </Lista>
 
-      <Lista id="resultado" className="hide-li">
-        {/* <li className="z">Z: <span></span></li> */}
-      </Lista>
+        <div>
+          <h3>RESULTADOS</h3>
+          <Lista id="resultado" className="hide-li">
+            {/* <li className="z">Z: <span></span></li> */}
+          </Lista>
+        </div>
+      </WrapListas>
     </>
   );
 }
